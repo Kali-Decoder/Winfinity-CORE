@@ -1,23 +1,23 @@
-import express from 'express';
-import {
-    registerUser,
-    depositAmount,
-    getLeaderboard,
-    withdrawAmount,
-    getAllGames,
-    addGame
-} from './controllers/userController.js';
+const express = require("express");
+const {
+  registerUser,
+  depositAmount,
+  getLeaderboard,
+  withdrawAmount,
+  getAllGames,
+  addGame,
+} = require("../controllers/userController");
 
 const router = express.Router();
 
 // User Routes
-router.post('/users/register', registerUser);
-router.post('/users/deposit', depositAmount);
-router.get('/leaderboard', getLeaderboard);
-router.post('/users/withdraw', withdrawAmount);
+router.post("/users/register", registerUser);
+router.post("/users/deposit", depositAmount);
+router.get("/leaderboard", getLeaderboard);
+router.post("/users/withdraw", withdrawAmount);
 
 // Game Routes
-router.get('/games', getAllGames);
-router.post('/games', addGame);
+router.get("/games", getAllGames);
+router.post("/games", addGame);
 
-export default router;
+module.exports = router;

@@ -1,9 +1,9 @@
 // Controller: userController.js
-import Game from '../models/game.model.js';
-import User from '../models/user.model.js';
+const Game = require('../models/game.model.js');
+const User = require('../models/user.model.js');
 
 // Register User
-export const registerUser = async (req, res) => {
+ const registerUser = async (req, res) => {
     try {
         const { username, wallet_address, avatar } = req.body;
         const user = new User({ username, wallet_address, avatar });
@@ -15,7 +15,7 @@ export const registerUser = async (req, res) => {
 };
 
 // Deposit Amount
-export const depositAmount = async (req, res) => {
+ const depositAmount = async (req, res) => {
     try {
         const { wallet_address, amount } = req.body;
         const user = await User.findOne({ wallet_address });
@@ -32,7 +32,7 @@ export const depositAmount = async (req, res) => {
 };
 
 // Get Leaderboard
-export const getLeaderboard = async (req, res) => {
+ const getLeaderboard = async (req, res) => {
     try {
         const leaderboard = await User.find().sort({ total_rewards_earned: -1 }).select('username wallet_address total_rewards_earned');
         res.json(leaderboard);
@@ -42,7 +42,7 @@ export const getLeaderboard = async (req, res) => {
 };
 
 // Withdraw Amount
-export const withdrawAmount = async (req, res) => {
+ const withdrawAmount = async (req, res) => {
     try {
         const { wallet_address, amount } = req.body;
         const user = await User.findOne({ wallet_address });
@@ -59,7 +59,7 @@ export const withdrawAmount = async (req, res) => {
 };
 
 // Get All Games
-export const getAllGames = async (req, res) => {
+ const getAllGames = async (req, res) => {
     try {
         const games = await Game.find();
         res.json(games);
@@ -69,7 +69,7 @@ export const getAllGames = async (req, res) => {
 };
 
 // Add Game
-export const addGame = async (req, res) => {
+ const addGame = async (req, res) => {
     try {
         const { name, description, deposit_amount } = req.body;
         const game = new Game({ name, description, deposit_amount });
@@ -79,3 +79,11 @@ export const addGame = async (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+
+module.exports= {registerUser,
+    depositAmount,
+    getLeaderboard,
+    withdrawAmount,
+    getAllGames,
+    addGame}
