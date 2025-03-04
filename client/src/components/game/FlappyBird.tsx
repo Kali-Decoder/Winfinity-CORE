@@ -424,21 +424,21 @@ const FlappyBird: React.FC = () => {
                 variant='light'
                 className='!bg-gray-100 hover:!bg-gray-200 text-black'
               >
-                $100
+                100 WIN
               </Button>
               <Button
                 onClick={() => handleSelectAmount(150)}
                 variant='light'
                 className='!bg-gray-100 hover:!bg-gray-200 text-black'
               >
-                $150
+                150 WIN
               </Button>
               <Button
                 onClick={() => handleSelectAmount(200)}
                 variant='light'
                 className='!bg-gray-100 hover:!bg-gray-200 text-black'
               >
-                $200
+                200 WIN
               </Button>
             </div>
           </div>

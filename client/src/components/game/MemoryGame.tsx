@@ -312,13 +312,13 @@ const MemoryGame: React.FC = () => {
             </p>
             <div className="flex flex-col gap-2">
               <Button onClick={() => handleSelectAmount(100)} variant="light">
-                $100
+                100 WIN
               </Button>
               <Button onClick={() => handleSelectAmount(150)} variant="light">
-                $150
+               150 WIN
               </Button>
               <Button onClick={() => handleSelectAmount(200)} variant="light">
-                $200
+                200 WIN
               </Button>
             </div>
           </div>
