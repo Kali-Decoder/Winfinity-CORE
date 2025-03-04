@@ -2,7 +2,7 @@ import { Capacitor } from '@capacitor/core';
 import React from 'react';
 import { createPortal } from 'react-dom';
 // import { AiOutlineSetting } from 'react-icons/ai';
-
+import numeral from "numeral";
 import Menu from '@/components/menu/Menu';
 
 import Tab from '@/components/tabs/Tab';
@@ -61,8 +61,8 @@ const Payment = () => {
             </div>
 
             <div className='text-gradient-primary mt-10 flex items-center justify-center gap-2'>
-              <h2 className='text-8xl'>{deposit}</h2>
-              <span className='text-4xl'>USDC</span>
+              <h2 className='text-8xl'>{numeral(deposit).format('0.0a')}</h2>
+              <span className='text-4xl'>WIN</span>
             </div>
             <PaymentTypes />
           </TabPanel>

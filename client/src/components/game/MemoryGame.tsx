@@ -345,7 +345,7 @@ const MemoryGame: React.FC = () => {
               Ready to Play?
             </h2>
             <p className="mb-4 text-center text-gray-700 dark:text-gray-300">
-              You need to pay <span className="font-bold">40 USD</span> from your
+              You need to pay <span className="font-bold">40 WIN</span> from your
               deposit to start.
             </p>
             <div className="flex justify-center gap-4">

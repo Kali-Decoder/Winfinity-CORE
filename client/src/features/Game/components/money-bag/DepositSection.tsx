@@ -21,7 +21,6 @@ const DepositSection = () => {
     const percentageValue = (percentage / 100) * userBalance;
     setDepositAmount(percentageValue);
   };
-
   const handleDeposit = async () => {
     try {
       console.log('depositAmount', depositAmount);
@@ -42,9 +41,9 @@ const DepositSection = () => {
     >
       <div className='text-gradient-primary  flex w-full flex-col items-center gap-1'>
         <span className='h2 block font-secondary'>Deposit Funds !</span>
-        <span className='font-secondary'>You Have {deposit} USDC Deposits</span>
-        <span className='font-secondary'>You Have {stake} USDC Stakes</span>
-        <span className='font-secondary'>Rewards Per Token :  {currentRewardPerToken} USDC</span>
+        <span className='font-secondary'>You Have {deposit} WIN Deposits</span>
+        <span className='font-secondary'>You Have {stake} WIN Stakes</span>
+        <span className='font-secondary'>Rewards Per Token :  {currentRewardPerToken} REW</span>
       </div>
 
       <div
@@ -61,12 +60,11 @@ const DepositSection = () => {
               <label>Select Coin</label>
               <select
                 // onChange={handleChangeLines}
-                defaultValue='USDC'
+                defaultValue='WIN'
                 className='border-secondary placeholder:text-text focus:border-purple w-full rounded-md border-2 border-blue-400 bg-transparent px-4 py-2 font-bold text-white transition-all placeholder:font-bold focus:outline-none'
               >
-                <option value='USDC'>USDC</option>
-                <option value='USDT'>USDT</option>
-                <option value='DAI'>DAI</option>
+                <option value='WIN'>WINFINITY</option>
+               
               </select>
             </div>
             <div>

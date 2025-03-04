@@ -74,7 +74,7 @@ const NFTThumbnail: React.FC<Props> = ({
                 )}
               >
                 {data?.amountToDeposit
-                  ? `$${data.amountToDeposit}`
+                  ? `${data.amountToDeposit} WIN`
                   : 'Loading...'}
               </span>
             </div>

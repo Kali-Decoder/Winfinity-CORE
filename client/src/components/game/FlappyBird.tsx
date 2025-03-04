@@ -457,7 +457,7 @@ const FlappyBird: React.FC = () => {
               Ready to Play?
             </h2>
             <p className='mb-4 text-center text-gray-700 dark:text-gray-300'>
-              You need to pay <span className='font-bold'>20 USD</span> from
+              You need to pay <span className='font-bold'>20 WIN</span> from
               your deposit to start.
             </p>
             <div className='flex justify-center gap-4'>

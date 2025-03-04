@@ -465,7 +465,7 @@ const SnakeGame: React.FC = () => {
         </div>
       )}
 
-      {/* Play Modal: Pay 10 USD to start game */}
+
       {playModalOpen && !gameStarted && !gameOver && (
         <div className='fixed inset-0 z-50 flex items-center justify-center bg-black bg-opacity-50'>
           <div className='relative w-full max-w-sm rounded-lg bg-white p-6 shadow-lg dark:bg-gray-800'>
@@ -474,7 +474,7 @@ const SnakeGame: React.FC = () => {
               Ready to Play?
             </h2>
             <p className='mb-4 text-center text-gray-700 dark:text-gray-300'>
-              You need to pay <span className='font-bold'>10 USD</span> from
+              You need to pay <span className='font-bold'>10 WIN</span> from
               your deposit to start.
             </p>
             <div className='flex justify-center gap-4'>
@@ -507,10 +507,7 @@ const SnakeGame: React.FC = () => {
               Your final score: {score}
             </p>
             
-            {/* 
-              YES -> Pay 10 USD (if possible) and start a new game 
-              NO  -> Reset the game fully and close the modal 
-            */}
+           
             <div className='flex flex-row items-center gap-4'>
               <button
                 onClick={handleGameOverYes}
