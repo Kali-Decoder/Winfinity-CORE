@@ -5,8 +5,13 @@ dotenv.config();
 const PORT = process.env.PORT || 5000;
 const cors = require("cors");
 const { getOrCreateUser } = require("./services/index.js");
-app.use(express.json());
 app.use(cors());
+app.use(express.json());
+app.use(cors({
+  origin: "http://localhost:3000/",
+  methods: ["GET", "POST", "PUT", "DELETE"],
+  allowedHeaders: ["Content-Type", "Authorization"]
+}));
 app.use(express.urlencoded({ extended: false }));
 require("./db/connection.js");
 
