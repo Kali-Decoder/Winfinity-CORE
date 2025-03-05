@@ -56,8 +56,8 @@ const QuizCard = ({
               <div className='mt-2 font-primary text-xs font-bold text-black'>
                 <span className='block whitespace-nowrap'>MAX. POOL BET</span>
                 <div className='flex gap-1'>
-                  <span>${entryPrice}</span>
-                  <span className='self-top text-[6px]'>FLOW</span>
+                  <span>{entryPrice} WIN</span>
+                  <span className='self-top text-[6px]'>WIN</span>
                 </div>
               </div>
             </>
