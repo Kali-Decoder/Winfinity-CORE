@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 
 
 import { RxCopy } from 'react-icons/rx';
-
+import numeral from "numeral"
 import Button from '@/components/buttons/Button';
 
 import SlideUp from '@/components/modals/SlideUp';
@@ -26,10 +26,10 @@ const PaymentTypes = () => {
   const {
    
     setStake,
-   
     stake,
     yieldAmount,
     unstakeYourAmount,
+    tokenBalance
   } = useQuizContext();
   useEffect(() => {
     const timer = setInterval(() => {
@@ -61,7 +61,6 @@ const PaymentTypes = () => {
 
   const handleUnstake = async () => {
     try {
-      console.log('depositAmount', unstakeAmount);
       await unstakeYourAmount(unstakeAmount.toString());
       setStake((prev: any) => Number(prev) - Number(unstakeAmount));
       setShowInfo(false);
@@ -99,9 +98,20 @@ const PaymentTypes = () => {
                   size='base'
                   className='w-full px-5 py-3 text-white'
                 >
-                  <span className='mx-auto w-full'>{stake} USDC</span>
+                  <span className='mx-auto w-full'>{numeral(stake).format('0.0a')} WIN</span>
                 </Button>
               </div>
+              <div className='grid grid-cols-2 items-center justify-between gap-2'>
+                <span className='text-sm'>Token Balance</span>
+                <Button
+                  variant='outline'
+                  size='base'
+                  className='w-full px-5 py-3 text-white'
+                >
+                  <span className='mx-auto w-full'>{numeral(tokenBalance).format('0.0a')} WIN</span>
+                </Button>
+              </div>
+
 
               <div className='grid grid-cols-2 items-center justify-between gap-2'>
                 <span className='text-sm'>Yield</span>
@@ -110,18 +120,7 @@ const PaymentTypes = () => {
                   size='base'
                   className='w-full px-5 py-3 text-white'
                 >
-                  <span className='mx-auto w-full'>{yieldAmount} USDC</span>
-                </Button>
-              </div>
-
-              <div className='grid grid-cols-2 items-center justify-between gap-2'>
-                <span className='text-sm'>Lock Period</span>
-                <Button
-                  variant='outline'
-                  size='base'
-                  className='w-full px-5 py-3 text-white'
-                >
-                  <span className='mx-auto w-full'>{formatTime(timeLeft)}</span>
+                  <span className='mx-auto w-full'>{(yieldAmount)} REW</span>
                 </Button>
               </div>
             </div>
@@ -137,7 +136,7 @@ const PaymentTypes = () => {
           <div className='flex w-full flex-col items-center justify-between space-y-5 text-black'>
             <div className='relative h-56 w-96 select-none p-6'>
               <p className='text-sm uppercase'>
-                Stake Amount (Max {stake} USDC)
+                Stake Amount (Max {stake} WIN)
               </p>
               <input
                 type='number'
