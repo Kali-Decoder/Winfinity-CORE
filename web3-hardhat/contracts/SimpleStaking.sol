@@ -3,6 +3,12 @@ pragma solidity ^0.8.0;
 
 import {IERC20} from "@openzeppelin/contracts/interfaces/IERC20.sol";
 
+// 0xBFff78BB02925E4D8671D0d90B2a6330fcAedd87 : wINFINITY
+// 0xDD0570Edb234A1753e5aD3f8Be8fa7515cdA1C12 : Reward 
+
+// Winfintiy : 0xe6d602De78a7a46F072B117A99b7e45640aB5E7C
+
+
 
 contract WinfinityStaking {
     

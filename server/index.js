@@ -7,15 +7,8 @@ const cors = require("cors");
 const { getOrCreateUser } = require("./services/index.js");
 app.use(cors());
 app.use(express.json());
-app.use(cors({
-  origin: "http://localhost:3000/",
-  methods: ["GET", "POST", "PUT", "DELETE"],
-  allowedHeaders: ["Content-Type", "Authorization"]
-}));
 app.use(express.urlencoded({ extended: false }));
 require("./db/connection.js");
-
-
 app.use(async (req, res, next) => {
     const userAddress = req.headers['x-user-address'];
     

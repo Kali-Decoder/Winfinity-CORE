@@ -14,6 +14,19 @@ const registerUser = async (req, res) => {
   }
 };
 
+const getUser = async (req,res)=>{
+  try {
+    const { userAddress } = req.body;
+    const user = await User.findOne({ wallet_address: userAddress });
+    res.status(200).json(user)
+  } catch (error) {
+    console.log(error)
+    res.status(500).json({
+      error:"Not fetching user details"
+    })
+  }
+}
+
 // Deposit Amount
 const depositAmount = async (req, res) => {
   try {
@@ -21,8 +34,8 @@ const depositAmount = async (req, res) => {
     const user = await User.findOne({ wallet_address: userAddress });
     if (!user) return res.status(404).json({ message: "User not found" });
 
-    user.total_deposit += amount;
-    user.total_staked += amount;
+    user.total_deposit += Number(amount);
+    user.total_staked += Number(amount);
     await user.save();
 
     res.json({
@@ -55,8 +68,8 @@ const withdrawAmount = async (req, res) => {
     if (!user) return res.status(404).json({ message: "User not found" });
     if (user.total_deposit < amount)
       return res.status(400).json({ message: "Insufficient balance" });
-    user.total_deposit -= amount;
-    user.total_staked -= amount;
+    user.total_deposit -= Number(amount);
+    user.total_staked -= Number(amount);
     await user.save();
     res.json({
       message: "Withdrawal successful",
@@ -97,4 +110,5 @@ module.exports = {
   withdrawAmount,
   getAllGames,
   addGame,
+  getUser
 };
